@@ -1,0 +1,12 @@
+{
+  "name": "fullstack_mkaiblog",
+  "version": "1.0.0",
+  "description": "Welcome to the Fullstack Blog Application documentation! This application allows users to explore a variety of blog posts with a user-friendly interface. Below is a detailed guide on how to set up and run the application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
