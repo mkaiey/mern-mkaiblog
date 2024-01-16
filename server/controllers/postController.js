@@ -68,7 +68,7 @@ export const stats = async (req, res, next) => {
       { $sort: { _id: 1 } },
     ]);
 
-    const last5Followers = await Users.findById(userId).populate({
+    const lastFollowers = await Users.findById(userId).populate({
       path: "followers",
       options: { sort: { _id: -1 } },
       perDocumentLimit: 5,
@@ -78,7 +78,7 @@ export const stats = async (req, res, next) => {
       },
     });
 
-    const last5Posts = await Posts.find({ user: userId })
+    const lastPosts = await Posts.find({ user: userId })
       .limit(5)
       .sort({ _id: -1 });
 
@@ -91,8 +91,8 @@ export const stats = async (req, res, next) => {
       followers: totalFollowers?.followers?.length,
       viewStats,
       followersStats,
-      last5Followers: last5Followers?.followers,
-      last5Posts,
+      lastFollowers: lastFollowers?.followers,
+      lastPosts,
     });
   } catch (error) {
     console.log(error);

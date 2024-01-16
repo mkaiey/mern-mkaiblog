@@ -292,7 +292,7 @@ export const writer = {
   accountType: "Writer",
   image:
     "https://firebasestorage.googleapis.com/v0/b/blogwave-4bb76.appspot.com/o/1700452069593FB_IMG_1608124167539-removebg%20(1).png?alt=media&token=c2270464-bc4f-4ec3-8ea7-39ca905621b5",
-  provider: "Codewave",
+  provider: "MkaiBlog",
   createdAt: "2023-11-20T03:48:59.313Z",
   updatedAt: "2023-11-22T08:31:31.779Z",
   __v: 0,

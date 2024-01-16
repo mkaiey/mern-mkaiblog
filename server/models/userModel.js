@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema(
     accountType: { type: String, default: "User" },
     image: { type: String },
     password: { type: String, select: true },
-    provider: { type: String, default: "Codewave" },
+    provider: { type: String, default: "MkaiBlog" },
     followers: [{ type: Schema.Types.ObjectId, ref: "Followers" }],
   },
   { timestamps: true }
