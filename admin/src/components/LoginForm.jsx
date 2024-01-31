@@ -13,7 +13,9 @@ const LoginForm = ({ toast, isSignin, setIsSignin, toggle, setFormClose }) => {
   const theme = colorScheme === "dark";
 
   const { signIn } = useStore();
+  // eslint-disable-next-line
   const { data, isPending, isSuccess, mutate } = useSignin(toast, toggle);
+  // eslint-disable-next-line
   const [strength, setStrength] = useState(0);
   const [passValue, setPassValue] = useInputState("");
   const navigate = useNavigate();
@@ -39,7 +41,6 @@ const LoginForm = ({ toast, isSignin, setIsSignin, toggle, setFormClose }) => {
       setFormClose(false);
       setTimeout(() => {
         signIn(data);
-
         navigate("/dashboard");
       }, 2000);
     }

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Button, Group, TextInput, useMantineColorScheme } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useInputState } from "@mantine/hooks";
-import { useNavigate } from "react-router-dom";
 import { PasswordStrength } from "./PasswordStrength";
 import clsx from "clsx";
 import { BiImages } from "react-icons/bi";
@@ -18,7 +17,6 @@ const SignUpForm = ({ toast, isSignin, setIsSignin, toggle, setFormClose }) => {
   const [file, setFile] = useState("");
   const [fileUrl, setFileUrl] = useState("");
   const [passValue, setPassValue] = useInputState("");
-  const navigate = useNavigate();
 
   const form = useForm({
     initialValues: {
@@ -37,6 +35,7 @@ const SignUpForm = ({ toast, isSignin, setIsSignin, toggle, setFormClose }) => {
   const handleSubmit = (values) => {
     if (!isSignin && strength < 90) return;
     setFormClose(true);
+    // eslint-disable-next-line
     const res = mutate({
       ...values,
       password: passValue,

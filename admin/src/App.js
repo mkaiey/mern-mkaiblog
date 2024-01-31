@@ -3,9 +3,15 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import StartPage from "./pages/StartPage";
 import OTPVerification from "./pages/OTPVerification";
+import useStore from "./store";
+import Dashboard from "./pages/Dashboard";
+import Analytics from "./pages/Analytics";
+import Followers from "./pages/Followers";
+import Contents from "./pages/Content";
+import WritePost from "./pages/WritePost";
 
 function Layout() {
-  const user = {};
+  const { user } = useStore((state) => state);
 
   const location = useLocation();
 
@@ -33,7 +39,12 @@ function App() {
     <main className="w-full min-h-screen">
       <Routes>
         <Route element={<Layout />}>
-          <Route index path="/" element={<Navigate to="dashboard" />} />
+          <Route index path="/" element={<Navigate to="/dashboard" />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/followers" element={<Followers />} />
+          <Route path="/contents" element={<Contents />} />
+          <Route path="/write/:postId?" element={<WritePost />} />
         </Route>
 
         <Route path="/auth" element={<StartPage />} />
