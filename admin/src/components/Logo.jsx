@@ -7,11 +7,11 @@ const Logo = ({ type }) => {
         to="/"
         className={`text-2xl font-semibold ${type && "text-white text-4xl"}`}
       >
-        Blog
+        Mkai
         <span
           className={`text-3xl text-rose-500 ${type && "text-5xl font-bold"}`}
         >
-          Wave
+          Blog
         </span>
       </Link>
     </div>

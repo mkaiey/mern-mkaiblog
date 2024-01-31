@@ -93,7 +93,7 @@ const UserMenu = ({ user, theme }) => {
           leftSection={
             <AiOutlineLogout style={{ width: rem(14), height: rem(14) }} />
           }
-          onclick={() => handleSignOut()}
+          onClick={() => handleSignOut()}
         >
           Logout
         </Menu.Item>
@@ -104,7 +104,7 @@ const UserMenu = ({ user, theme }) => {
           leftSection={
             <IconTrash style={{ width: rem(14), height: rem(14) }} />
           }
-          onclick={() => {}}
+          onClick={() => {}}
         >
           Delete account
         </Menu.Item>
@@ -118,6 +118,10 @@ const Navbar = () => {
   const { user, signInModal, setSignInModal } = useStore();
   const location = useLocation();
   const theme = colorScheme === "dark";
+
+  const handleLogin = () => {
+    location.pathname === "/auth" && setSignInModal(!signInModal);
+  };
 
   return (
     <div className="w-full fixed top-0 z-50 bg-transparent flex flex-row px-4 md:px-6 py-4 md:py-5 items-center justify-between gap-4 shadow">
@@ -151,6 +155,7 @@ const Navbar = () => {
           ) : (
             <Link
               to="/auth"
+              onClick={handleLogin}
               className={clsx(
                 "flex items-center gap-2 rounded-full 2xl:mr-10 text-base",
                 theme ? "text-white" : "text-black"

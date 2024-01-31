@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Flex, Modal, useMantineColorScheme } from "@mantine/core";
+import { Button, Modal, useMantineColorScheme } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MdArrowForward } from "react-icons/md";
@@ -8,6 +8,8 @@ import useStore from "../store";
 import clsx from "clsx";
 import Navbar from "../components/Navbar";
 import LoginForm from "../components/LoginForm";
+import SignUpForm from "../components/SignUpForm";
+import Loading from "../components/Loading";
 
 const StartPage = () => {
   const { colorScheme } = useMantineColorScheme();
@@ -33,6 +35,7 @@ const StartPage = () => {
 
   useEffect(() => {
     user?.token && navigate(from);
+    // eslint-disable-next-line
   }, [user]);
 
   return (
@@ -87,9 +90,7 @@ const StartPage = () => {
             )}
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-            sapiente at rerum pariatur. Vero, eos autem ut unde molestias
-            dolorum reprehenderit itaque ipsam neque fugiat architecto eius modi
-            totam ipsa laboriosam ad voluptates deleniti quia!
+            sapiente at rerum pariatur.
           </span>
 
           <div className="flex gap-6 items-center mt-6">
@@ -125,13 +126,23 @@ const StartPage = () => {
         {isSignin ? (
           <LoginForm
             isSignin={isSignin}
-            setIsSignin={setSignInModal}
+            setIsSignin={setIsSignin}
             toast={toast}
+            toggle={toggle}
             setFormClose={setFormClose}
           />
         ) : (
-          <></>
+          <SignUpForm
+            isSignin={isSignin}
+            setIsSignin={setIsSignin}
+            toast={toast}
+            toggle={toggle}
+            setFormClose={setFormClose}
+          />
         )}
+
+        <Loading visible={visible} />
+        <Toaster richColors />
       </Modal>
     </div>
   );

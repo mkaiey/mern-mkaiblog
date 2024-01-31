@@ -33,13 +33,13 @@ export const sendVerificationEmail = async (user, res, token) => {
         Please verify your email address with the OTP.
         <br>
         <h1 styles='font-size: 20px; color: rgb(8, 56, 188);'>${otp}</h1>
-    <p>This OTP <b>expires in 2 mins</b></p>
+      <p>This OTP <b>expires in 2 mins</b></p>
     </p>
-    <div style="margin-top: 20px;">
+      <div style="margin-top: 20px;">
         <h5>Regards</h5>
         <h5>MkaiBlog</h5>
-    </div>
-</div>`,
+      </div>
+    </div>`,
   };
 
   try {

@@ -4,7 +4,6 @@ import Sidebar from "./components/Sidebar";
 import StartPage from "./pages/StartPage";
 import OTPVerification from "./pages/OTPVerification";
 
-
 function Layout() {
   const user = {};
 
