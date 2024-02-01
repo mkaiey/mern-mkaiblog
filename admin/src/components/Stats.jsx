@@ -59,7 +59,7 @@ const Stats = ({ dt }) => {
             fw="500"
             className="font-medium"
           >
-            <span>{stat.diff}</span>
+            <span>{stat.diff}%</span>
             <DiffIcon size="1rem" stroke={0.5} />
           </Text>
         </Group>

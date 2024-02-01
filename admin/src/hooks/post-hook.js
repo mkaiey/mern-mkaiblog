@@ -35,3 +35,36 @@ export const useAnalytics = (toast, toggle, token) => {
     },
   });
 };
+
+export const useCreatePost = (toast, toggle, token) => {
+  return useMutation({
+    mutationFn: async (formData) => {
+      toggle();
+
+      const { data } = await axios.post(
+        `${API_URI}/posts/create-post`,
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      return data;
+    },
+
+    onError: (error) => {
+      toggle();
+      toast.error(error?.response?.data?.message ?? error.message);
+    },
+    onSuccess: (data) => {
+      toggle();
+      toast.success(data?.message);
+
+      setTimeout(() => {
+        window.location.replace("/contents");
+      }, 2000);
+    },
+  });
+};

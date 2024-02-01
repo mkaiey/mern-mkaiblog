@@ -1,4 +1,4 @@
-import { toast } from "sonner";
+import { Toaster, toast } from "sonner";
 import Loading from "../components/Loading";
 import { Select, useMantineColorScheme } from "@mantine/core";
 import useStore from "../store";
@@ -13,7 +13,7 @@ const Analytics = () => {
   const { colorScheme } = useMantineColorScheme();
 
   const { user } = useStore();
-  const [numOfDays, setNumberOfDays] = useState(28);
+  const [numOfDays, setNumberOfDays] = useState();
   // eslint-disable-next-line
   const [visible, { toggle }] = useDisclosure(false);
   const { data, isPending, mutate } = useAnalytics(toast, toggle, user?.token);
@@ -38,7 +38,7 @@ const Analytics = () => {
         </p>
 
         <Select
-          defaultValue="28 days"
+          // defaultValue="28 days"
           placeholder="Range"
           data={["7 days", "28 days", "90 days", "365 days"]}
           onChange={(val) => setNumberOfDays(val?.split(" "[0]))}
@@ -62,6 +62,7 @@ const Analytics = () => {
       </div>
 
       <Loading visible={isPending} />
+      <Toaster richColors />
     </div>
   );
 };

@@ -3,7 +3,7 @@ import useStore from "../store";
 import { useDisclosure } from "@mantine/hooks";
 import { useEffect } from "react";
 import { useAnalytics } from "../hooks/post-hook";
-import { toast } from "sonner";
+import { Toaster, toast } from "sonner";
 import Stats from "../components/Stats";
 import Graph from "../components/Graph";
 import clsx from "clsx";
@@ -46,7 +46,7 @@ const Dashboard = () => {
               theme ? "text-white" : "text-slate-600"
             )}
           >
-            Recent Followers
+            Recent 5 Followers
           </span>
 
           <RecentFollowerTable data={data?.last5Followers} theme={theme} />
@@ -68,6 +68,7 @@ const Dashboard = () => {
       </div>
 
       <Loading visible={isPending} />
+      <Toaster richColors />
     </div>
   );
 };
