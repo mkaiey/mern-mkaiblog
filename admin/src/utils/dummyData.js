@@ -1,6 +1,6 @@
 import { MdCastForEducation, MdOutlineSportsHandball } from "react-icons/md";
 import { BsCodeSlash, BsNewspaper } from "react-icons/bs";
-import { GiClothes } from "react-icons/gi";
+import { GiRetroController } from "react-icons/gi";
 
 export const posts = [
   {
@@ -230,9 +230,9 @@ export const CATEGORIES = [
     icon: <MdCastForEducation />,
   },
   {
-    label: "FASHION",
+    label: "GAMING",
     color: "bg-[#9333ea]",
-    icon: <GiClothes />,
+    icon: <GiRetroController />,
   },
 ];
 

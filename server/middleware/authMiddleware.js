@@ -7,8 +7,6 @@ const authMiddleware = async (req, res, next) => {
     next("Authentication failed");
   }
 
-  // Bearer djhdgfghdjkgdfh
-
   const token = authHeader?.split(" ")[1];
 
   try {

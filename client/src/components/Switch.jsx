@@ -5,8 +5,6 @@ const ThemeSwitch = () => {
   const { theme, setTheme } = useStore();
   const [isDarkMode, setIsDarkMode] = useState(theme === "dark");
 
-  //   console.log(isDarkMode);
-
   const toggleTheme = () => {
     const newTheme = isDarkMode ? "light" : "dark";
     setIsDarkMode(!isDarkMode);

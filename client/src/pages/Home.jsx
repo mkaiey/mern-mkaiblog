@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Banner,
@@ -8,11 +7,12 @@ import {
   PopularWriters,
 } from "../components";
 
-import { CATEGORIES, popular, posts } from "../utils/dummyData";
+import { CATEGORIES } from "../utils/dummyData";
+import { usePopularPosts, usePosts } from "../hooks/post-hook";
 
 const Home = () => {
-  const numOfPages = 4;
-  const [page, setPage] = useState(0);
+  const { posts, numOfPages, setPage } = usePosts({ writerId: "" });
+  const popular = usePopularPosts();
 
   const randomIndex = Math.floor(Math.random() * posts.length);
 
@@ -24,22 +24,22 @@ const Home = () => {
 
   if (posts?.length < 1)
     return (
-      <div className='w-full h-full py-8 flex items-center justify-center'>
-        <span className='text-lg text-slate-500'>No Post Available</span>
+      <div className="w-full h-full py-8 flex items-center justify-center">
+        <span className="text-lg text-slate-500">No Post Available</span>
       </div>
     );
 
   return (
-    <div className='py-10 2xl:py-5'>
+    <div className="py-10 2xl:py-5">
       <Banner post={posts[randomIndex]} />
 
-      <div className='px-0 lg:pl-20 2xl:px-20 '>
+      <div className="px-0 lg:pl-20 2xl:px-20 ">
         {/* Categories */}
-        <div className='mt-6 md:mt-0'>
-          <p className='text-2xl font-semibold text-gray-600 dark:text-white'>
+        <div className="mt-6 md:mt-0">
+          <p className="text-2xl font-semibold text-gray-600 dark:text-white">
             Popular Categories
           </p>
-          <div className='w-full flex flex-wrap py-10 gap-8'>
+          <div className="w-full flex flex-wrap py-10 gap-8">
             {CATEGORIES.map((cat) => (
               <Link
                 to={`/category?cat=${cat?.label}`}
@@ -54,23 +54,23 @@ const Home = () => {
         </div>
 
         {/* Blog Post */}
-        <div className='w-full flex flex-col md:flex-row gap-10 2xl:gap-20'>
+        <div className="w-full flex flex-col md:flex-row gap-10 2xl:gap-20">
           {/* LEFT */}
-          <div className='w-full md:w-2/3 flex flex-col gap-y-28 md:gap-y-14'>
+          <div className="w-full md:w-2/3 flex flex-col gap-y-28 md:gap-y-14">
             {posts?.map((post, index) => (
               <Card key={post?._id} post={post} index={index} />
             ))}
 
-            <div className='w-full flex items-cemter justify-center'>
+            <div className="w-full flex items-cemter justify-center">
               <Pagination
-                totalPages={numOfPages}
+                totalPages={parseInt(numOfPages)}
                 onPageChange={handlePageChange}
               />
             </div>
           </div>
 
           {/* RIGHT */}
-          <div className='w-full md:w-1/4 flex flex-col gap-y-12'>
+          <div className="w-full md:w-1/4 flex flex-col gap-y-12">
             {/* POPULAR POSTS */}
             <PopularPosts posts={popular?.posts} />
 

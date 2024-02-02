@@ -36,7 +36,7 @@ const MobileDrawer = ({ theme }) => {
         overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
       >
         <Sidebar close={close} />
-        
+
         <div className="w-full mt-10">
           <UserMenu user={user?.user} theme={theme} />
         </div>

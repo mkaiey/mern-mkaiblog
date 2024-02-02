@@ -2,18 +2,18 @@ import { Link } from "react-router-dom";
 
 const Logo = ({ type }) => {
   return (
-    <div className=''>
+    <div className="">
       <Link
-        to='/'
+        to="/"
         className={`text-2xl font-semibold dark:text-white ${
           type && "text-white  text-4xl"
         }`}
       >
-        Blog
+        Mkai
         <span
           className={`text-3xl text-rose-500 ${type && " text-5xl font-bold"}`}
         >
-          Wave
+          Blog
         </span>
       </Link>
     </div>

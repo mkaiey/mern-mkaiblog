@@ -34,8 +34,8 @@ export const uploadFile = (setFileURL, file) => {
     },
     (error) => {},
     () => {
-      getDownloadURL(uploadTask.snapshot.ref).then((downlodUrl) => {
-        setFileURL(downlodUrl);
+      getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
+        setFileURL(downloadUrl);
       });
     }
   );

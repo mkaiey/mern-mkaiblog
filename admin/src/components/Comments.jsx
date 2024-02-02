@@ -35,7 +35,7 @@ const Comments = () => {
       >
         <div className="w-full h-full pb-6">
           <div className="w-full h-full flex flex-col gap-6 px-2">
-            {data?.data?.map(({ _id, user, desc, post, createdAt }) => {
+            {data?.data?.map(({ _id, user, desc, post, createdAt }) => (
               <div key={_id} className="w-full flex gap-4">
                 <img
                   src={user?.image || NoProfile}
@@ -60,10 +60,12 @@ const Comments = () => {
                     </span>
                   </div>
 
-                  <span className="text-sm text-gray-700 dark:text-gray-500">{desc}</span>
+                  <span className="text-sm text-gray-700 dark:text-gray-500">
+                    {desc}
+                  </span>
                 </div>
-              </div>;
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </Modal>

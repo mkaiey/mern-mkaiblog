@@ -38,7 +38,6 @@ const Analytics = () => {
         </p>
 
         <Select
-          // defaultValue="28 days"
           placeholder="Range"
           data={["7 days", "28 days", "90 days", "365 days"]}
           onChange={(val) => setNumberOfDays(val?.split(" "[0]))}

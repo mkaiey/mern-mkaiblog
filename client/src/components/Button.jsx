@@ -7,7 +7,7 @@ const Button = ({ label, styles, icon, type, onClick }) => {
     >
       {label}
 
-      {icon && <div className='ml-2'>{icon}</div>}
+      {icon && <div className="ml-2">{icon}</div>}
     </button>
   );
 };

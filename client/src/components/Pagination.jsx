@@ -8,9 +8,9 @@ const Pagination = ({ totalPages, onPageChange }) => {
   const showEllipses = totalPages > 8;
 
   return (
-    <div className='pagination'>
+    <div className="pagination">
       <button
-        className='pagination-btn'
+        className="pagination-btn"
         onClick={() => onPageChange(Math.max(currentPage - 1, 1))}
         disabled={currentPage === 1}
       >
@@ -19,10 +19,10 @@ const Pagination = ({ totalPages, onPageChange }) => {
 
       {showEllipses && currentPage > 4 && (
         <>
-          <button className='pagination-btn' onClick={() => onPageChange(1)}>
+          <button className="pagination-btn" onClick={() => onPageChange(1)}>
             1
           </button>
-          <span className='pagination-ellipsis'>...</span>
+          <span className="pagination-ellipsis">...</span>
         </>
       )}
 
@@ -41,18 +41,15 @@ const Pagination = ({ totalPages, onPageChange }) => {
 
       {showEllipses && currentPage < totalPages - 3 && (
         <>
-          <span className='pagination-ellipsis'>...</span>
-          <button
-            className='-btn'
-            onClick={() => onPageChange(totalPages)}
-          >
+          <span className="pagination-ellipsis">...</span>
+          <button className="-btn" onClick={() => onPageChange(totalPages)}>
             {totalPages}
           </button>
         </>
       )}
 
       <button
-        className='pagination-btn'
+        className="pagination-btn"
         onClick={() => onPageChange(Math.min(currentPage + 1, totalPages))}
         disabled={currentPage === totalPages}
       >
