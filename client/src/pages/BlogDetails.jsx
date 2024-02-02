@@ -80,7 +80,7 @@ const BlogDetails = () => {
 
       <div className="w-full flex flex-col md:flex-row gapx-10 2xl:gap-x-28 mt-10">
         {/* LEFT */}
-        <div className="w-full md:w-2/3 flex flex-col text-black dark:text-gray-500 ">
+        <div className="px-8 w-full md:w-2/3 flex flex-col text-black dark:text-gray-500 ">
           {post?.desc && (
             <Markdown
               options={{ wrapper: "article" }}
