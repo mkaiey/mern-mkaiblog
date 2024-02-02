@@ -43,7 +43,7 @@ const Pagination = ({ totalPages, onPageChange }) => {
         <>
           <span className='pagination-ellipsis'>...</span>
           <button
-            className='pagination-btn'
+            className='-btn'
             onClick={() => onPageChange(totalPages)}
           >
             {totalPages}
