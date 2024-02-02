@@ -68,3 +68,16 @@ export function createSlug(title) {
     .replace(/^-+/, "") // Trim - from start of text
     .replace(/-+$/, ""); // Trim - from end of text
 }
+
+export const updateURL = ({ page, navigate, location }) => {
+  const params = new URLSearchParams();
+
+  if (page && page > 1) {
+    params.set("page", page);
+  }
+
+  const newURL = `${location.pathname}?${params.toString()}`;
+  navigate(newURL, { replace: true });
+
+  return newURL;
+};
