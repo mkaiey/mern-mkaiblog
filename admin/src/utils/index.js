@@ -6,7 +6,9 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 
-export const API_URI = "http://localhost:8800";
+export const API_URI = "https://server-mkaiblog.vercel.app";
+
+// export const API_URI = "http://localhost:8800";
 
 export const uploadFile = (setFileURL, file) => {
   const storage = getStorage(app);
