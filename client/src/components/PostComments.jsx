@@ -74,7 +74,7 @@ const PostComments = ({ postId }) => {
           </div>
         </form>
       ) : (
-        <Link to="/signin" className="flex flex-col py-10">
+        <Link to="/sign-in" className="flex flex-col py-10">
           <Button
             label="Sign in to comment"
             styles="flex items-center justify-center bg-white dark:bg-transparent text-black dark:text-gray-500 px-4 py-1.5 rounded-full border"
